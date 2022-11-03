@@ -1,6 +1,7 @@
 # STARTER-team03
 
 * Production deployment: <https://f22-6pm-4-team03.herokuapp.com> 
+* qa deployment: <https://f22-6pm-4-team03-qa.herokuapp.com>
 
 * Storybook (production): <https://ucsb-cs156-f22.github.io/team03-f22-6pm-4-docs>
 * Storybook (development/qa): <https://ucsb-cs156-f22.github.io/team03-f22-6pm-4-docs-qa>
