@@ -237,9 +237,9 @@ describe("AppNavbar tests", () => {
 
     });
 
-    test("renders the organization menu correctly for a user", async () => {
+    test("renders the organization menu correctly for an admin", async () => {
 
-        const currentUser = currentUserFixtures.userOnly;
+        const currentUser = currentUserFixtures.adminUser;
         const systemInfo = systemInfoFixtures.showingBoth;
 
         const doLogin = jest.fn();
