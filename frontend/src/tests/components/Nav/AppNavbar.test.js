@@ -229,7 +229,7 @@ describe("AppNavbar tests", () => {
         );
 
         await waitFor(() => expect(getByTestId("appnavbar-recommendations-dropdown")).toBeInTheDocument());
-        const dropdown = getByTestId("appnavbar-recommdations-dropdown");
+        const dropdown = getByTestId("appnavbar-recommendations-dropdown");
         const aElement = dropdown.querySelector("a");
         expect(aElement).toBeInTheDocument();
         aElement?.click();
