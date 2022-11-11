@@ -309,7 +309,7 @@ describe("AppNavbar tests", () => {
 
     });
 
-        test("renders the articles correctly for an admin", async () => {
+        test("renders the article correctly for an admin", async () => {
 
             const currentUser = currentUserFixtures.adminUser;
             const systemInfo = systemInfoFixtures.showingBoth;
