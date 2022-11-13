@@ -6,7 +6,7 @@ export default function ArticlesIndexPage() {
       <div className="pt-2">
         <h1>Todos</h1>
         <p>
-          ArticlesThis is where the index page will go
+          This is where the index page will go
         </p>
       </div>
     </BasicLayout>
