@@ -309,6 +309,30 @@ describe("AppNavbar tests", () => {
 
     });
 
+    test("renders the organization menu correctly for a user", async () => {
+
+        const currentUser = currentUserFixtures.userOnly;
+        const systemInfo = systemInfoFixtures.showingBoth;
+
+        const doLogin = jest.fn();
+
+        const {getByTestId  } = render(
+            <QueryClientProvider client={queryClient}>
+                <MemoryRouter>
+                    <AppNavbar currentUser={currentUser} systemInfo={systemInfo} doLogin={doLogin} />
+                </MemoryRouter>
+            </QueryClientProvider>
+        );
+
+        await waitFor(() => expect(getByTestId("appnavbar-organization-dropdown")).toBeInTheDocument());
+        const dropdown = getByTestId("appnavbar-organization-dropdown");
+        const aElement = dropdown.querySelector("a");
+        expect(aElement).toBeInTheDocument();
+        aElement?.click();
+        await waitFor( () => expect(getByTestId("appnavbar-organization-list")).toBeInTheDocument() );
+
+    });
+
         test("renders the article correctly for an admin", async () => {
 
             const currentUser = currentUserFixtures.adminUser;
