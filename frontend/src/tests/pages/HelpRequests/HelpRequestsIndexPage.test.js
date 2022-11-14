@@ -134,13 +134,6 @@ describe("HelpRequestsIndexPage tests", () => {
 
         await waitFor(() => { expect(axiosMock.history.get.length).toBeGreaterThanOrEqual(3); });
 
-        const expectedHeaders = ["id", "RequesterEmail", "TeamID", "TableOrBreakoutRoom", "RequestTime", "Explanation", "Solved"];
-    
-        expectedHeaders.forEach((headerText) => {
-          const header = getByText(headerText);
-          expect(header).toBeInTheDocument();
-        });
-
         expect(queryByTestId(`${testId}-cell-row-0-col-id`)).not.toBeInTheDocument();
     });
 
@@ -149,7 +142,7 @@ describe("HelpRequestsIndexPage tests", () => {
 
         const queryClient = new QueryClient();
         axiosMock.onGet("/api/helprequest/all").reply(200, helpRequestsFixtures.threeHelpRequests);
-        axiosMock.onDelete("/api/helprequest").reply(200, "HelpRequest with id 1 was deleted");
+        axiosMock.onDelete("/api/helprequest", {params: {id: 1}}).reply(200, "HelpRequest with id 1 was deleted");
 
 
         const { getByTestId } = render(
