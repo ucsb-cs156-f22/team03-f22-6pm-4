@@ -124,7 +124,7 @@ describe("HelpRequestsIndexPage tests", () => {
         const queryClient = new QueryClient();
         axiosMock.onGet("/api/helprequest/all").timeout();
 
-        const { queryByTestId, getByText } = render(
+        const { queryByTestId, _getByText } = render(
             <QueryClientProvider client={queryClient}>
                 <MemoryRouter>
                     <HelpRequestsIndexPage />
