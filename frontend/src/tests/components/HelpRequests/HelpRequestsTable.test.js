@@ -1,4 +1,5 @@
-import { fireEvent, render, waitFor } from "@testing-library/react";
+//import { fireEvent, render, waitFor } from "@testing-library/react";
+import { render } from "@testing-library/react";
 import HelpRequestsTable from "main/components/HelpRequests/HelpRequestsTable"
 import { QueryClient, QueryClientProvider } from "react-query";
 import { MemoryRouter } from "react-router-dom";
@@ -88,10 +89,11 @@ describe("HelpRequestsTable tests", () => {
     /*const editButton = getByTestId(`${testId}-cell-row-0-col-Edit-button`);
     expect(editButton).toBeInTheDocument();
     expect(editButton).toHaveClass("btn-primary");
+    */
 
     const deleteButton = getByTestId(`${testId}-cell-row-0-col-Delete-button`);
     expect(deleteButton).toBeInTheDocument();
-    expect(deleteButton).toHaveClass("btn-danger");*/
+    expect(deleteButton).toHaveClass("btn-danger");
     
   });
 
