@@ -139,7 +139,7 @@ describe("OrganizationIndexPage tests", () => {
 
         const queryClient = new QueryClient();
         axiosMock.onGet("/api/ucsborganization/all").reply(200, organizationFixtures.threeOrganizations);
-        axiosMock.onDelete("/api/ucsborganization").reply(200, "Organization with orgCode SKY was deleted");
+        axiosMock.onDelete("/api/ucsborganization", {params: {orgCode: "SKY"}}).reply(200, "Organization with orgCode SKY was deleted");
 
 
         const { getByTestId } = render(
