@@ -4,7 +4,7 @@ import UCSBDiningCommonsMenuItemTable from "main/components/UCSBDiningCommonsMen
 import { QueryClient, QueryClientProvider } from "react-query";
 import { MemoryRouter } from "react-router-dom";
 import { currentUserFixtures } from "fixtures/currentUserFixtures";
-import { get } from "react-hook-form";
+import { _get } from "react-hook-form";
 
 
 const mockedNavigate = jest.fn();
