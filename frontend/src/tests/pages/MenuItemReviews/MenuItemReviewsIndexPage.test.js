@@ -1,4 +1,4 @@
-import { _fireEvent, render, waitFor } from "@testing-library/react";
+import { fireEvent, render, waitFor } from "@testing-library/react";
 import { QueryClient, QueryClientProvider } from "react-query";
 import { MemoryRouter } from "react-router-dom";
 import MenuItemReviewsIndexPage from "main/pages/MenuItemReviews/MenuItemReviewsIndexPage";
@@ -145,25 +145,25 @@ describe("MenuItemReviewsIndexPage tests", () => {
         expect(queryByTestId(`${testId}-cell-row-0-col-id`)).not.toBeInTheDocument();
     });
 
-    /*test("test what happens when you click delete, admin", async () => {
+    test("test what happens when you click delete, admin", async () => {
         setupAdminUser();
 
         const queryClient = new QueryClient();
-        axiosMock.onGet("/api/ucsbdiningcommons/all").reply(200, diningCommonsFixtures.threeCommons);
-        axiosMock.onDelete("/api/ucsbdiningcommons", {params: {code: "de-la-guerra"}}).reply(200, "DiningCommons with id de-la-guerra was deleted");
+        axiosMock.onGet("/api/MenuItemReview/all").reply(200, menuitemreviewsFixtures.threeMenuItemReviews);
+        axiosMock.onDelete("/api/MenuItemReview", {params: {id: 2}}).reply(200, "MenuItemReview with id 2 was deleted");
 
 
         const { getByTestId } = render(
             <QueryClientProvider client={queryClient}>
                 <MemoryRouter>
-                    <DiningCommonsIndexPage />
+                    <MenuItemReviewsIndexPage />
                 </MemoryRouter>
             </QueryClientProvider>
         );
 
-        await waitFor(() => { expect(getByTestId(`${testId}-cell-row-0-col-code`)).toBeInTheDocument(); });
+        await waitFor(() => { expect(getByTestId(`${testId}-cell-row-0-col-id`)).toBeInTheDocument(); });
 
-       expect(getByTestId(`${testId}-cell-row-0-col-code`)).toHaveTextContent("de-la-guerra");
+       expect(getByTestId(`${testId}-cell-row-0-col-id`)).toHaveTextContent("2");
 
 
         const deleteButton = getByTestId(`${testId}-cell-row-0-col-Delete-button`);
@@ -171,11 +171,11 @@ describe("MenuItemReviewsIndexPage tests", () => {
 
         fireEvent.click(deleteButton);
 
-        await waitFor(() => { expect(mockToast).toBeCalledWith("DiningCommons with id de-la-guerra was deleted") });
+        await waitFor(() => { expect(mockToast).toBeCalledWith("MenuItemReview with id 2 was deleted") });
 
     });
 
-    test("test what happens when you click edit as an admin", async () => {
+    /*test("test what happens when you click edit as an admin", async () => {
         setupAdminUser();
 
         const queryClient = new QueryClient();
