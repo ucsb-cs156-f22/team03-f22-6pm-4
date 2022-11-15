@@ -2,7 +2,7 @@ import React from 'react'
 import { useBackend } from 'main/utils/useBackend'; // use prefix indicates a React Hook
 
 import BasicLayout from "main/layouts/BasicLayout/BasicLayout";
-import UCSBDiningCommonsMenuItem from 'main/components/UCSBDiningCommonsMenuItem/UCSBDiningCommonsMenuItemTable';
+import UCSBDiningCommonsMenuItemTable from 'main/components/UCSBDiningCommonsMenuItem/UCSBDiningCommonsMenuItemTable';
 import { useCurrentUser } from 'main/utils/currentUser' // use prefix indicates a React Hook
 
 export default function UCSBDiningCommonsMenuItemIndexPage() {

@@ -41,7 +41,7 @@ export default function UCSBDiningCommonsMenuItemTable({ ucsbdiningcommonsmenuit
             accessor: 'station',
         }
     ];
-    
+
 
     // const columnsIfAdmin = [
     //     ...columns,
@@ -50,7 +50,7 @@ export default function UCSBDiningCommonsMenuItemTable({ ucsbdiningcommonsmenuit
     // ];
 
     //const columnsToDisplay = hasRole(currentUser, "ROLE_ADMIN") ? columnsIfAdmin : columns;
-    const columnsToDisplau = columns;
+    const columnsToDisplay = columns;
 
     return <OurTable
         data={ucsbdiningcommonsmenuitem}
