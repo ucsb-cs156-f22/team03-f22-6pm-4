@@ -188,6 +188,29 @@ describe("AppNavbar tests", () => {
         await waitFor( () => expect(getByTestId("appnavbar-help-requests-list")).toBeInTheDocument() );
 
     });
+    
+    test("renders the recommendations menu correctly for a user", async () => {
+
+        const currentUser = currentUserFixtures.userOnly;
+        const systemInfo = systemInfoFixtures.showingBoth;
+
+        const doLogin = jest.fn();
+
+        const {getByTestId  } = render(
+            <QueryClientProvider client={queryClient}>
+                <MemoryRouter>
+                    <AppNavbar currentUser={currentUser} systemInfo={systemInfo} doLogin={doLogin} />
+                </MemoryRouter>
+            </QueryClientProvider>
+        );
+
+        await waitFor(() => expect(getByTestId("appnavbar-recommendations-dropdown")).toBeInTheDocument());
+        const dropdown = getByTestId("appnavbar-recommendations-dropdown");
+        const aElement = dropdown.querySelector("a");
+        expect(aElement).toBeInTheDocument();
+        aElement?.click();
+        await waitFor( () => expect(getByTestId("appnavbar-recommendations-list")).toBeInTheDocument() );
+    });
 
     test("renders the ucsbdates menu correctly for a user", async () => {
 
