@@ -59,7 +59,6 @@ export default function AppNavbar({ currentUser, systemInfo, doLogout, currentUr
                 hasRole(currentUser, "ROLE_USER") && (
                   <NavDropdown title="Help Request" id="appnavbar-help-requests-dropdown" data-testid="appnavbar-help-requests-dropdown" >
                     <NavDropdown.Item as={Link} to="/helpRequests/list" data-testid="appnavbar-help-requests-list">List</NavDropdown.Item>
-                    <NavDropdown.Item as={Link} to="/helpRequests/create" data-testid="appnavbar-help-requests-create">Create</NavDropdown.Item>
                   </NavDropdown>
                 )
               }
@@ -85,12 +84,31 @@ export default function AppNavbar({ currentUser, systemInfo, doLogout, currentUr
               }
               {
                 hasRole(currentUser, "ROLE_USER") && (
+                  <NavDropdown title="Organization" id="appnavbar-organization-dropdown" data-testid="appnavbar-organization-dropdown" >
+                    <NavDropdown.Item as={Link} to="/organization/list" data-testid="appnavbar-organization-list">List</NavDropdown.Item>
+                  </NavDropdown>
+                )
+              }
+
+            {
+              hasRole(currentUser, "ROLE_USER") && (
+                <NavDropdown title="Articles" id="appnavbar-articles-dropdown" data-testid="appnavbar-articles-dropdown" >
+                  <NavDropdown.Item as={Link} to="/articles/list" data-testid="appnavbar-articles-list">List</NavDropdown.Item>
+                  {
+
+                      <NavDropdown.Item as={Link} to="/articles/create" data-testid="appnavbar-articles-create">Create</NavDropdown.Item>
+
+                  }
+                </NavDropdown>
+              )
+            }
+            {
+                hasRole(currentUser, "ROLE_USER") && (
                   <NavDropdown title="UCSBDiningCommonsMenuItem" id="appnavbar-ucsbdiningcommonsmenuitem-dropdown" data-testid="appnavbar-ucsbdiningcommonsmenuitem-dropdown" >
                     <NavDropdown.Item as={Link} to="/ucsbdiningcommonsmenuitem/list">List Dining Commons Menu Item</NavDropdown.Item>
                   </NavDropdown>
                 )
               }
-              
             </Nav>
 
             <Nav className="ml-auto">
