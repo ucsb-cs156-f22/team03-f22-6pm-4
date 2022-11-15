@@ -7,6 +7,8 @@ import TodosIndexPage from "main/pages/Todos/TodosIndexPage";
 import TodosCreatePage from "main/pages/Todos/TodosCreatePage";
 import TodosEditPage from "main/pages/Todos/TodosEditPage";
 
+import MenuItemReviewsIndexPage from "main/pages/MenuItemReviews/MenuItemReviewsIndexPage";
+
 import HelpRequestsIndexPage from "main/pages/HelpRequests/HelpRequestsIndexPage";
 
 import DiningCommonsIndexPage from "main/pages/DiningCommons/DiningCommonsIndexPage";
@@ -59,6 +61,15 @@ function App() {
             </>
           )
         }
+
+        {
+                  hasRole(currentUser, "ROLE_USER") && (
+                    <>
+                      <Route exact path="/menuitemreview/list" element={<MenuItemReviewsIndexPage />} />
+                    </>
+                  )
+        }
+
         {
           hasRole(currentUser, "ROLE_USER") && (
             <>
