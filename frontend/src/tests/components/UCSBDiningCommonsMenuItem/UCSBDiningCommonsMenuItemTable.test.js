@@ -70,7 +70,7 @@ describe("UCSBDiningCommonsMenuItemTable tests", () => {
 
     const expectedHeaders = ["id", "diningCommonsCode", "name", "station"];
     const expectedFields = ["id", "diningCommonsCode", "name", "station"];
-    const testId = "MenuItemTable";
+    const testId = "UCSBDiningCommonsMenuItemTable";
 
     expectedHeaders.forEach((headerText) => {
       const header = getByText(headerText);
