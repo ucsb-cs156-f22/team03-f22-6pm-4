@@ -52,11 +52,11 @@ export default function UCSBDiningCommonsMenuItemTable({ ucsbdiningcommonsmenuit
         }
     ];
 
-
+    const testid = "UCSBDiningCommonsMenuItemTable";
     const columnsIfAdmin = [
         ...columns,
         //ButtonColumn("Edit", "primary", editCallback, "UCSBDatesTable"),
-        ButtonColumn("Delete", "danger", deleteCallback, "UCSBDatesTable")
+        ButtonColumn("Delete", "danger", deleteCallback, "UCSBDiningCommonsMenuItemTable")
     ];
 
     const columnsToDisplay = hasRole(currentUser, "ROLE_ADMIN") ? columnsIfAdmin : columns;
@@ -64,6 +64,6 @@ export default function UCSBDiningCommonsMenuItemTable({ ucsbdiningcommonsmenuit
     return <OurTable
         data={ucsbdiningcommonsmenuitem}
         columns={columnsToDisplay}
-        testid={"UCSBDiningCommonsMenuItemTable"}
+        testid={testid}
     />;
 };
