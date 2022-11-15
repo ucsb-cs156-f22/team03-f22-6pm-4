@@ -20,7 +20,7 @@ const ucsbDiningCommonsMenuItemFixtures = {
         },
         {
             "id": 3,
-            "diningCommonsCode": "ortega",
+            "diningCommonsCode": "ortegaTwo",
             "name": "Baked Pesto Pasta with Chicken",
             "station": "Entree Specials"
         }
