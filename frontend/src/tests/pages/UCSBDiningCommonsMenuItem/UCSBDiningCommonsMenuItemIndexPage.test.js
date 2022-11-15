@@ -77,7 +77,7 @@ describe("UCSBDiningCommonsMenuItemIndexPage tests", () => {
     test("renders three dates without crashing for regular user", async () => {
         setupUserOnly();
         const queryClient = new QueryClient();
-        axiosMock.onGet("/api/ucsbdiningcommonsmenuitem/all").reply(200, ucsbDiningCommonsFixtures.threeDates);
+        axiosMock.onGet("/api/ucsbdiningcommonsmenuitem/all").reply(200, ucsbDiningCommonsMenuItemFixtures.threeDates);
 
         const { getByTestId } = render(
             <QueryClientProvider client={queryClient}>
