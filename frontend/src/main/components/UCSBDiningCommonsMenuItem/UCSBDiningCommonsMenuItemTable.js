@@ -22,7 +22,7 @@ export default function UCSBDiningCommonsMenuItemTable({ ucsbdiningcommonsmenuit
     //     navigate(`/ucsbdates/edit/${cell.row.values.id}`)
     // }
 
-    // // Stryker disable all : hard to test for query caching
+    // Stryker disable all : hard to test for query caching
     const deleteMutation = useBackendMutation(
         cellToAxiosParamsDelete,
         { onSuccess: onDeleteSuccess },
@@ -30,7 +30,7 @@ export default function UCSBDiningCommonsMenuItemTable({ ucsbdiningcommonsmenuit
     );
      // Stryker enable all 
 
-    // // Stryker disable next-line all : TODO try to make a good test for this
+    // Stryker disable next-line all : TODO try to make a good test for this
     const deleteCallback = async (cell) => { deleteMutation.mutate(cell); }
 
     const columns = [
@@ -39,15 +39,15 @@ export default function UCSBDiningCommonsMenuItemTable({ ucsbdiningcommonsmenuit
             accessor: 'id', // accessor is the "key" in the data
         },
         {
-            Header: 'diningCommonsCode',
+            Header: 'Dining Commons Code',
             accessor: 'diningCommonsCode',
         },
         {
-            Header: 'name',
+            Header: 'Name',
             accessor: 'name',
         },
         {
-            Header: 'station',
+            Header: 'Station',
             accessor: 'station',
         }
     ];

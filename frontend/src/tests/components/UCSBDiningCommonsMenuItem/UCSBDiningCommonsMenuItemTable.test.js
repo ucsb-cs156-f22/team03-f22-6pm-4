@@ -4,6 +4,7 @@ import UCSBDiningCommonsMenuItemTable from "main/components/UCSBDiningCommonsMen
 import { QueryClient, QueryClientProvider } from "react-query";
 import { MemoryRouter } from "react-router-dom";
 import { currentUserFixtures } from "fixtures/currentUserFixtures";
+import { get } from "react-hook-form";
 
 
 const mockedNavigate = jest.fn();
@@ -68,7 +69,7 @@ describe("UCSBDiningCommonsMenuItemTable tests", () => {
 
     );
 
-    const expectedHeaders = ["id", "diningCommonsCode", "name", "station"];
+    const expectedHeaders = ["id", "Dining Commons Code", "Name", "Station"];
     const expectedFields = ["id", "diningCommonsCode", "name", "station"];
     const testId = "UCSBDiningCommonsMenuItemTable";
 
@@ -84,6 +85,8 @@ describe("UCSBDiningCommonsMenuItemTable tests", () => {
 
     expect(getByTestId(`${testId}-cell-row-0-col-id`)).toHaveTextContent("1");
     expect(getByTestId(`${testId}-cell-row-1-col-id`)).toHaveTextContent("2");
+    expect(getByTestId(`${testId}-cell-row-2-col-id`)).toHaveTextContent("3");
+    
     /*
     const editButton = getByTestId(`${testId}-cell-row-0-col-Edit-button`);
     expect(editButton).toBeInTheDocument();
