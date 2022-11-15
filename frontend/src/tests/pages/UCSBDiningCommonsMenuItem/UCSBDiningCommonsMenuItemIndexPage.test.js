@@ -22,6 +22,13 @@ jest.mock('react-toastify', () => {
     };
 });
 
+const mockedNavigate = jest.fn();
+
+jest.mock('react-router-dom', () => ({
+    ...jest.requireActual('react-router-dom'),
+    useNavigate: () => mockedNavigate
+}));
+
 describe("UCSBDiningCommonsMenuItemIndexPage tests", () => {
 
     const axiosMock =new AxiosMockAdapter(axios);
@@ -118,7 +125,7 @@ describe("UCSBDiningCommonsMenuItemIndexPage tests", () => {
         const queryClient = new QueryClient();
         axiosMock.onGet("/api/ucsbdiningcommonsmenuitem/all").timeout();
 
-        const restoreConsole = mockConsole();
+        //const restoreConsole = mockConsole();
 
         const { queryByTestId } = render(
             <QueryClientProvider client={queryClient}>
@@ -129,7 +136,7 @@ describe("UCSBDiningCommonsMenuItemIndexPage tests", () => {
         );
 
         await waitFor(() => { expect(axiosMock.history.get.length).toBeGreaterThanOrEqual(1); });
-        restoreConsole();
+        //restoreConsole();
 
         expect(queryByTestId(`${testId}-cell-row-0-col-id`)).not.toBeInTheDocument();
     });
