@@ -53,6 +53,7 @@ export default function UCSBDiningCommonsMenuItemTable({ ucsbdiningcommonsmenuit
     ];
 
     const testid = "UCSBDiningCommonsMenuItemTable";
+    
     const columnsIfAdmin = [
         ...columns,
         //ButtonColumn("Edit", "primary", editCallback, "UCSBDatesTable"),
