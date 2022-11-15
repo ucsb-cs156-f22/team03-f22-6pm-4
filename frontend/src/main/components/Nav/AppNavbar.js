@@ -62,6 +62,13 @@ export default function AppNavbar({ currentUser, systemInfo, doLogout, currentUr
                   </NavDropdown>
                 )
               }
+              {
+                hasRole(currentUser, "ROLE_USER") && (
+                  <NavDropdown title="Recommendations" id="appnavbar-recommendations-dropdown" data-testid="appnavbar-recommendations-dropdown" >
+                    <NavDropdown.Item as={Link} to="/recommendations/list" data-testid="appnavbar-recommendations-list">List</NavDropdown.Item>
+                  </NavDropdown>
+                )
+              }
                {
                 hasRole(currentUser, "ROLE_USER") && (
                   <NavDropdown title="Dining Commons" id="appnavbar-dining-commons-dropdown" data-testid="appnavbar-dining-commons-dropdown" >
@@ -70,6 +77,13 @@ export default function AppNavbar({ currentUser, systemInfo, doLogout, currentUr
                   </NavDropdown>
                 )
               }
+              {
+                              hasRole(currentUser, "ROLE_USER") && (
+                                <NavDropdown title="Menu Item Reviews" id="appnavbar-menuitemreview-dropdown" data-testid="appnavbar-menuitemreview-dropdown" >
+                                  <NavDropdown.Item as={Link} to="/menuitemreview/list" data-testid="appnavbar-menuitemreview-list">List</NavDropdown.Item>
+                                </NavDropdown>
+                              )
+                            }
               {
                 hasRole(currentUser, "ROLE_USER") && (
                   <NavDropdown title="UCSBDates" id="appnavbar-ucsbdates-dropdown" data-testid="appnavbar-ucsbdates-dropdown" >
