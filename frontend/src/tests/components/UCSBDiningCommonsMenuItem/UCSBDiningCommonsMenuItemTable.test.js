@@ -23,7 +23,7 @@ describe("UCSBDiningCommonsMenuItemTable tests", () => {
     render(
       <QueryClientProvider client={queryClient}>
         <MemoryRouter>
-          <UCSBDiningCommonsMenuItemTable ucsbDiningCommonsMenuItem ={[]} currentUser={currentUser} />
+          <UCSBDiningCommonsMenuItemTable ucsbdiningcommonsmenuitem ={[]} currentUser={currentUser} />
         </MemoryRouter>
       </QueryClientProvider>
 
@@ -35,7 +35,7 @@ describe("UCSBDiningCommonsMenuItemTable tests", () => {
     render(
       <QueryClientProvider client={queryClient}>
         <MemoryRouter>
-          <UCSBDiningCommonsMenuItemTable ucsbDiningCommonsMenuItem={[]} currentUser={currentUser} />
+          <UCSBDiningCommonsMenuItemTable ucsbdiningcommonsmenuitem={[]} currentUser={currentUser} />
         </MemoryRouter>
       </QueryClientProvider>
 
@@ -48,7 +48,7 @@ describe("UCSBDiningCommonsMenuItemTable tests", () => {
     render(
       <QueryClientProvider client={queryClient}>
         <MemoryRouter>
-          <UCSBDiningCommonsMenuItemTable ucsbDiningCommonsMenuItem={[]} currentUser={currentUser} />
+          <UCSBDiningCommonsMenuItemTable ucsbdiningcommonsmenuitem={[]} currentUser={currentUser} />
         </MemoryRouter>
       </QueryClientProvider>
 
@@ -62,7 +62,7 @@ describe("UCSBDiningCommonsMenuItemTable tests", () => {
     const { getByText, getByTestId } = render(
       <QueryClientProvider client={queryClient}>
         <MemoryRouter>
-          <UCSBDiningCommonsMenuItemTable ucsbDiningCommonsMenuItem={ucsbDiningCommonsMenuItemFixtures.threeDiningCommonsMenuItem} currentUser={currentUser} />
+          <UCSBDiningCommonsMenuItemTable ucsbdiningcommonsmenuitem={ucsbDiningCommonsMenuItemFixtures.threeDiningCommonsMenuItem} currentUser={currentUser} />
         </MemoryRouter>
       </QueryClientProvider>
 
