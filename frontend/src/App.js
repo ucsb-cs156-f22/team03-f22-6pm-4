@@ -18,6 +18,7 @@ import UCSBDatesIndexPage from "main/pages/UCSBDates/UCSBDatesIndexPage";
 import UCSBDatesCreatePage from "main/pages/UCSBDates/UCSBDatesCreatePage";
 import UCSBDatesEditPage from "main/pages/UCSBDates/UCSBDatesEditPage";
 
+import OrganizationIndexPage from "./main/pages/Organization/OrganizationIndexPage";
 
 import ArticlesCreatePage from "main/pages/Articles/ArticlesIndexPage.js";
 import ArticlesListPage from "main/pages/Articles/ArticlesIndexPage.js";
@@ -77,6 +78,13 @@ function App() {
           hasRole(currentUser, "ROLE_USER") && (
             <>
               <Route exact path="/ucsbdates/list" element={<UCSBDatesIndexPage />} />
+            </>
+          )
+        }
+        {
+          hasRole(currentUser, "ROLE_USER") && (
+            <>
+              <Route exact path="/organization/list" element={<OrganizationIndexPage />} />
             </>
           )
         }
