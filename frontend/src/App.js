@@ -9,6 +9,8 @@ import TodosEditPage from "main/pages/Todos/TodosEditPage";
 
 import MenuItemReviewsIndexPage from "main/pages/MenuItemReviews/MenuItemReviewsIndexPage";
 
+import HelpRequestsIndexPage from "main/pages/HelpRequests/HelpRequestsIndexPage";
+
 import DiningCommonsIndexPage from "main/pages/DiningCommons/DiningCommonsIndexPage";
 import DiningCommonsCreatePage from "main/pages/DiningCommons/DiningCommonsCreatePage";
 import DiningCommonsEditPage from "main/pages/DiningCommons/DiningCommonsEditPage";
@@ -17,6 +19,10 @@ import DiningCommonsEditPage from "main/pages/DiningCommons/DiningCommonsEditPag
 import UCSBDatesIndexPage from "main/pages/UCSBDates/UCSBDatesIndexPage";
 import UCSBDatesCreatePage from "main/pages/UCSBDates/UCSBDatesCreatePage";
 import UCSBDatesEditPage from "main/pages/UCSBDates/UCSBDatesEditPage";
+
+
+import ArticlesCreatePage from "main/pages/Articles/ArticlesIndexPage.js";
+import ArticlesListPage from "main/pages/Articles/ArticlesIndexPage.js";
 
 
 import { hasRole, useCurrentUser } from "main/utils/currentUser";
@@ -42,6 +48,15 @@ function App() {
               <Route exact path="/todos/list" element={<TodosIndexPage />} />
               <Route exact path="/todos/create" element={<TodosCreatePage />} />
               <Route exact path="/todos/edit/:todoId" element={<TodosEditPage />} />
+              <Route exact path="/articles/list" element={<ArticlesListPage />} />
+              <Route exact path="/articles/create" element={<ArticlesCreatePage />} />
+            </>
+          )
+        }
+        {
+          hasRole(currentUser, "ROLE_USER") && (
+            <>
+              <Route exact path="/helpRequests/list" element={<HelpRequestsIndexPage />} />
             </>
           )
         }
