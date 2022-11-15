@@ -13,7 +13,7 @@ const organizationFixtures = {
             "inactive": false
         },
         {
-            "orgCode": "OSIL",
+            "orgCode": "OSLI",
             "orgTranslationShort": "STUDENT LIFE",
             "orgTranslation": "OFFICE OF STUDENT LIFE",
             "inactive": false
