@@ -22,7 +22,7 @@ export default function UCSBDiningCommonsMenuItemIndexPage() {
     <BasicLayout>
       <div className="pt-2">
         <h1>UCSB Dining Commons Menu Item</h1>
-        <UCSBDiningCommonsMenuItemTable ucsbDiningcCommonsMenuItem={ucsbdiningcommonsmenuitem} currentUser={currentUser} />
+        <UCSBDiningCommonsMenuItemTable ucsbdiningcommonsmenuitem={ucsbdiningcommonsmenuitem} currentUser={currentUser} />
       </div>
     </BasicLayout>
   )
