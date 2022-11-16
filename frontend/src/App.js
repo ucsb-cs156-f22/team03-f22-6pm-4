@@ -25,6 +25,8 @@ import OrganizationIndexPage from "./main/pages/Organization/OrganizationIndexPa
 import ArticlesCreatePage from "main/pages/Articles/ArticlesIndexPage.js";
 import ArticlesListPage from "main/pages/Articles/ArticlesIndexPage.js";
 
+import RecommendationsIndexPage from "main/pages/Recommendations/RecommendationsIndexPage";
+
 
 import { hasRole, useCurrentUser } from "main/utils/currentUser";
 
@@ -104,6 +106,13 @@ function App() {
             <>
               <Route exact path="/ucsbdates/create" element={<UCSBDatesCreatePage />} />
               <Route exact path="/ucsbdates/edit/:id" element={<UCSBDatesEditPage />} />
+            </>
+          )
+        }
+        {
+          hasRole(currentUser, "ROLE_USER") && (
+            <>
+              <Route exact path="/recommendations/list" element={<RecommendationsIndexPage />} />
             </>
           )
         }
