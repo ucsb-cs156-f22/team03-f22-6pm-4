@@ -1,0 +1,7 @@
+17:02:10 (46810) INFO ConfigReader No config file specified. Running with command line arguments.
+17:02:10 (46810) DEBUG BroadcastReporter Broadcasting to reporters ["progress","clear-text"]
+17:02:10 (46810) INFO ConfigReader Use `stryker init` command to generate your config file.
+17:02:10 (46810) DEBUG PluginLoader Loading stryker-* from /Users/Vyom/.npm/_npx/49301fa88e4fa3d5/node_modules
+17:02:10 (46810) DEBUG PluginLoader Expression stryker-* not resulted in plugins to load
+17:02:10 (46810) DEBUG PluginLoader Loading plugins /Users/Vyom/.npm/_npx/49301fa88e4fa3d5/node_modules/stryker/src/reporters/index.js
+17:02:10 (46810) DEBUG PluginLoader Loading plugins /Users/Vyom/.npm/_npx/49301fa88e4fa3d5/node_modules/stryker/src/mutators/index.js
