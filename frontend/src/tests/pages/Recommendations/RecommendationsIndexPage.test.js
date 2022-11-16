@@ -5,7 +5,7 @@ import RecommendationsIndexPage from "main/pages/Recommendations/Recommendations
 
 import { apiCurrentUserFixtures } from "fixtures/currentUserFixtures";
 import { systemInfoFixtures } from "fixtures/systemInfoFixtures";
-import { ucsbDatesFixtures } from "fixtures/recommendationsFixtures";
+import { recommendationsFixtures } from "fixtures/recommendationsFixtures";
 import axios from "axios";
 import AxiosMockAdapter from "axios-mock-adapter";
 import _mockConsole from "jest-mock-console";
@@ -70,7 +70,7 @@ describe("RecommendationsIndexPage tests", () => {
         render(
             <QueryClientProvider client={queryClient}>
                 <MemoryRouter>
-                    <RecommendationsIndexCase />
+                    <RecommendationsIndexPage />
                 </MemoryRouter>
             </QueryClientProvider>
         );
@@ -121,7 +121,7 @@ describe("RecommendationsIndexPage tests", () => {
         const queryClient = new QueryClient();
         axiosMock.onGet("/api/recommendations/all").timeout();
 
-        const { queryByTestId, getByText } = render(
+        const { queryByTestId } = render(
             <QueryClientProvider client={queryClient}>
                 <MemoryRouter>
                     <RecommendationsIndexPage />
@@ -161,7 +161,7 @@ describe("RecommendationsIndexPage tests", () => {
        
         fireEvent.click(deleteButton);
 
-        await waitFor(() => { expect(mockToast).toBeCalledWith("UCSBDate with id 1 was deleted") });
+        await waitFor(() => { expect(mockToast).toBeCalledWith("Recommendation with id 1 was deleted") });
 
     });
 
