@@ -1,8 +1,14 @@
-import {  render } from "@testing-library/react";
+import { fireEvent, render, waitFor } from "@testing-library/react";
 import ArticlesTable from "main/components/Articles/ArticlesTable";
 import { QueryClient, QueryClientProvider } from "react-query";
 import { MemoryRouter } from "react-router-dom";
 import { currentUserFixtures } from "fixtures/currentUserFixtures";
+import { articlesFixtures } from "fixtures/articlesFixtures";
+import ArticlesIndexPage from "main/pages/Articles/ArticlesIndexPage";
+
+import AxiosMockAdapter from "axios-mock-adapter";
+import axios from "axios";
+
 
 
 const mockedNavigate = jest.fn();
@@ -94,6 +100,39 @@ describe("ArticlesTable tests", () => {
     const deleteButton = getByTestId(`ArticlesTable-header-Delete`);
     expect(deleteButton).toBeInTheDocument();
   });
+
+
+      test("test what happens when you click delete, admin", async () => {
+          const axiosMock =new AxiosMockAdapter(axios);
+          const queryClient = new QueryClient();
+          axiosMock.onGet("/api/articles/all").reply(200, articlesFixtures.threeArticles);
+          axiosMock.onDelete("/api/articles", {params: {code: "2"}}).reply(200, "Articles with id 2 was deleted");
+
+        const currentUser = currentUserFixtures.adminUser;
+
+          const { getByTestId } = render(
+              <QueryClientProvider client={queryClient}>
+                  <MemoryRouter>
+                      <ArticlesTable articles={articlesFixtures.threeArticles} currentUser={currentUser} />
+                  </MemoryRouter>
+              </QueryClientProvider>
+          );
+
+//          await waitFor(() => { expect(getByTestId(`${testId}-cell-row-0-col-code`)).toBeInTheDocument(); });
+
+
+
+         expect(getByTestId(`ArticlesTable-cell-row-1-col-url`)).toHaveTextContent("www.samsung.com/pad");
+
+
+          const deleteButton = getByTestId(`ArticlesTable-cell-row-1-col-Delete-button`);
+          expect(deleteButton).toBeInTheDocument();
+
+          fireEvent.click(deleteButton);
+
+//          await waitFor(() => { expect(mockToast).toBeCalledWith("Articles with id 2 was deleted") });
+
+      });
 
 
 });

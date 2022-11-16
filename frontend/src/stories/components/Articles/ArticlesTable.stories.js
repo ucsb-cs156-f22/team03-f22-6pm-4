@@ -30,7 +30,7 @@ threeArticles.args = {
 export const ArticlesAsAdmin = Template.bind({});
 
 ArticlesAsAdmin.args = {
-    articles: articlesFixtures.threeCommons,
+    articles: articlesFixtures.threeArticles,
     currentUser: currentUserFixtures.adminUser
 };
 
