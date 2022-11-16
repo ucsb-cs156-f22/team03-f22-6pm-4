@@ -1,5 +1,4 @@
 import {  render } from "@testing-library/react";
-import { articlesFixtures } from "fixtures/articlesFixtures";
 import ArticlesTable from "main/components/Articles/ArticlesTable";
 import { QueryClient, QueryClientProvider } from "react-query";
 import { MemoryRouter } from "react-router-dom";
@@ -71,14 +70,12 @@ describe("ArticlesTable tests", () => {
 
     const expectedHeaders = ['id',  'title', 'url','explanation','email','dateAdded'];
     const expectedFields = ['id',  'title', 'url','explanation','email','dateAdded'];
-    const testId = "ArticlesTable";
-
     expectedHeaders.forEach((headerText) => {
       const header = getByText(headerText);
       expect(header).toBeInTheDocument();
     });
 
-    expectedFields.forEach((field) => {
+    expectedFields.forEach(() => {
       const header = getByTestId(`ArticlesTable-header-url`);
       expect(header).toBeInTheDocument();
       const header2 = getByTestId(`ArticlesTable-header-id`);
