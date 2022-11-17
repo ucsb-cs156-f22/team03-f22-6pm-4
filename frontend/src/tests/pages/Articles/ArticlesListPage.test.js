@@ -27,5 +27,3 @@ describe("ArticlesListPage tests", () => {
     });
 
 });
-
-
